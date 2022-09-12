@@ -1,0 +1,29 @@
+<p-paginator
+  [rows]="10"
+  [totalRecords]="120"
+  [rowsPerPageOptions]="[10, 20, 30]"
+></p-paginator>
+
+<p-paginator
+  #paginator
+  styleClass="paginatorBorder"
+  [rows]="10"
+  [totalRecords]="120"
+  [rowsPerPageOptions]="[10, 20, 30]"
+  [templateRight]="templateRight"
+  [templateLeft]="templateLeft"
+  [showJumpToPageDropdown]="false"
+  [showPageLinks]="false"
+  [alwaysShow]="false"
+  [showFirstLastIcon]="false"
+  currentPageReportTemplate="{first}-{last} of {totalRecords} items"
+  [showJumpToPageInput]="false"
+  [showCurrentPageReport]="true"
+  dropdownAppendTo="body"
+>
+  <ng-template #templateLeft pTemplate="templateLeft"> </ng-template>
+  <ng-template #templateRight pTemplate="templateRight">
+    <span>Rows per page: </span>
+    <span>{{ first }}-{{ last }} of {{ totalRecords }} items </span>
+  </ng-template>
+</p-paginator>
